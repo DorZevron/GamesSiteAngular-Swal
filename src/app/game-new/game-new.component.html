@@ -1,0 +1,32 @@
+<div class="col-3">
+  <div>
+    <h2>Game details:</h2>
+  </div>
+  <form #newGame="ngForm" (ngSubmit)="onSubmit(newGame)">
+    <div class="form-group">
+      <label for="Game_Name">Game Name:</label>
+      <input type="text" name="Game_Name" id="gameName" class="form-control" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="Player1">Player One:</label>
+      <input type="text" name="Player1" id="playerOne" class="form-control" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="Player2">Player Two:</label>
+      <input type="text" name="Player2" id="playerTwo" class="form-control" ngModel required>
+    </div>
+    <div class="form-group">
+      <label for="Who_won">Winner:</label>
+      <select name="Who_won" id="winner" class="custom-select" ngModel required>
+       <option value="">Choose Player</option>
+       <option value="Player1">Player One</option>
+       <option value="Player2">Player Two</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-success" [class.disabled]="newGame.invalid">Create Game</button>
+    </div>
+  </form>
+</div>
+
+

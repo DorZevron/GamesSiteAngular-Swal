@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>View Page</h1>
+  <table class="table" style="width:100%">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Game Name</th>
+      <th>Player1</th>
+      <th>Player2</th>
+      <th>Who Win</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of games" (click)="selectGame(game)"
+    [class.selected]="selectedGame === game">
+      <th scope="row">{{game.GameID}}</th>
+      <td>{{game.Game_Name}}</td>
+      <td>{{game.Player1}}</td>
+      <td>{{game.Player2}}</td>
+      <td>{{game.Who_won}}</td>
+      <td><a class="btn btn-info" [routerLink]="['/games', game.GameID]" >Details</a></td>
+    </tr>
+  </tbody>
+  </table>
+
+
+  <div  id="button" class="row" style="float:right">
+    <div class="col-4">
+      <a routerLink="/games/new" class="btn btn-success">Create New Game</a>
+    </div>
+  </div>
+</div>
+
+
+
